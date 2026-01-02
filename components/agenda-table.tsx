@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Search, Filter, FileText, Download } from "lucide-react"
+import { FaRegFilePdf } from "react-icons/fa";
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -118,23 +119,19 @@ export function AgendaTable() {
                                     onClick={() => handleRowClick(item.pdfUrl)}
                                     className="cursor-pointer group"
                                 >
-                                    <TableCell className="font-mono text-xs text-muted-foreground">
+                                    <TableCell className="font-mono text-sm text-muted-foreground">
                                         {formatDate(item.date)}
                                     </TableCell>
                                     <TableCell>
-                                        <div className="font-medium font-serif group-hover:text-primary transition-colors">
+                                        <div className="font-medium text-base font-serif group-hover:text-primary transition-colors">
+                                            <FaRegFilePdf className="inline mr-2 size-4" />
                                             {item.title}
                                         </div>
-                                        {item.committee && (
-                                            <div className="text-xs text-muted-foreground mt-1">
-                                                {item.committee}
-                                            </div>
-                                        )}
                                     </TableCell>
                                     <TableCell className="hidden lg:table-cell">
                                         <Badge
                                             variant="secondary"
-                                            className={cn("font-normal text-xs", statusColors[item.status])}
+                                            className={cn("font-normal text-sm", statusColors[item.status])}
                                         >
                                             {item.status}
                                         </Badge>

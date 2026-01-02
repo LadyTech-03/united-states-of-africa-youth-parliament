@@ -39,7 +39,7 @@ const NewsSection = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="md:col-span-2 bg-gradient-to-br from-primary/5 to-accent/5 border-l-4 border-primary shadow-lg">
+            <Card className="md:col-span-2 bg-gradient-to-br from-primary/5 to-accent/5 border border-primary shadow-lg">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="h-1 w-12 bg-accent" />
@@ -47,7 +47,7 @@ const NewsSection = () => {
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="relative w-48 h-56 shrink-0 rounded overflow-hidden border-4 border-primary shadow-xl">
+                <div className="relative w-48 h-56 shrink-0 rounded overflow-hidden border border-primary shadow-xl">
                   <Image src="/images/speaker.jpg" alt="Speaker Portrait" fill className="object-cover" />
                 </div>
                 <div className="space-y-4 flex-1">

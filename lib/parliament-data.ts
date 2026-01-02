@@ -12,11 +12,20 @@ export interface Party {
     isGovernment?: boolean
 }
 
+export type Gender = "Male" | "Female"
+export type AttendanceState = "Present" | "Absent" | "Excused"
+
 export interface Seat {
     id: string
     mpName: string
     partyId: string
     constituency?: string
+    // Intelligence Data
+    gender: Gender
+    attendanceState: AttendanceState
+    seniority: number // Years in parliament
+    age: number
+    region: string
 }
 
 export interface ParliamentData {
@@ -78,6 +87,32 @@ function generateSeats(): Seat[] {
     const seats: Seat[] = []
     let seatId = 1
 
+    // Regions for random assignment
+    const regions = ["Northern", "Southern", "Eastern", "Western", "Central", "Coastal", "Highlands", "Islands"]
+
+    // Helper to generate extended data
+    const generateIntelligence = (partyId: string) => {
+        // Gender balance logic (approx 40% female)
+        const gender: Gender = Math.random() > 0.6 ? "Female" : "Male"
+
+        // Attendance (90% present)
+        const rand = Math.random()
+        let attendanceState: AttendanceState = "Present"
+        if (rand > 0.95) attendanceState = "Absent"
+        else if (rand > 0.90) attendanceState = "Excused"
+
+        // Seniority (0-40 years), heavily weighted to 0-15
+        const seniority = Math.floor(Math.abs(Math.random() - Math.random()) * (1 + 40))
+
+        // Age (25-80), somewhat correlated with seniority
+        const age = 25 + seniority + Math.floor(Math.random() * 30)
+
+        // Region
+        const region = regions[Math.floor(Math.random() * regions.length)]
+
+        return { gender, attendanceState, seniority, age, region }
+    }
+
     // Progressive Alliance - 130 seats (Majority party)
     const paConstituencies = [
         "Central District", "Harbor Bay", "Eastside", "Western Hills", "Northgate",
@@ -91,6 +126,7 @@ function generateSeats(): Seat[] {
             mpName: generateMPName(i),
             partyId: "progressive-alliance",
             constituency: paConstituencies[i % paConstituencies.length] + (i >= paConstituencies.length ? ` ${Math.floor(i / paConstituencies.length) + 1}` : ""),
+            ...generateIntelligence("progressive-alliance")
         })
     }
 
@@ -105,6 +141,7 @@ function generateSeats(): Seat[] {
             mpName: generateMPName(i + 130),
             partyId: "national-coalition",
             constituency: ncConstituencies[i % ncConstituencies.length] + (i >= ncConstituencies.length ? ` ${Math.floor(i / ncConstituencies.length) + 1}` : ""),
+            ...generateIntelligence("national-coalition")
         })
     }
 
@@ -118,6 +155,7 @@ function generateSeats(): Seat[] {
             mpName: generateMPName(i + 195),
             partyId: "peoples-movement",
             constituency: pmConstituencies[i % pmConstituencies.length] + (i >= pmConstituencies.length ? ` ${Math.floor(i / pmConstituencies.length) + 1}` : ""),
+            ...generateIntelligence("peoples-movement")
         })
     }
 
@@ -129,6 +167,7 @@ function generateSeats(): Seat[] {
             mpName: generateMPName(i + 225),
             partyId: "reform-party",
             constituency: rpConstituencies[i % rpConstituencies.length] + (i >= rpConstituencies.length ? ` ${Math.floor(i / rpConstituencies.length) + 1}` : ""),
+            ...generateIntelligence("reform-party")
         })
     }
 
@@ -140,6 +179,7 @@ function generateSeats(): Seat[] {
             mpName: generateMPName(i + 240),
             partyId: "democratic-union",
             constituency: duConstituencies[i % duConstituencies.length] + (i >= duConstituencies.length ? ` ${Math.floor(i / duConstituencies.length) + 1}` : ""),
+            ...generateIntelligence("democratic-union")
         })
     }
 
@@ -151,6 +191,7 @@ function generateSeats(): Seat[] {
             mpName: generateMPName(i + 247),
             partyId: "independent",
             constituency: indConstituencies[i],
+            ...generateIntelligence("independent")
         })
     }
 
