@@ -159,48 +159,50 @@ export function ChamberStatsPanel({ viewMode, seats, selectedSeat, hoveredFilter
             </h2>
 
             {/* Selected MP Profile */}
-            {selectedSeat ? (
-                <div className="animate-in slide-in-from-right-4 fade-in duration-200 mb-8 bg-background border rounded-lg p-5 shadow-sm">
-                    <div className="flex items-center gap-4 mb-4">
-                        <div className="h-14 w-14 rounded-full bg-muted flex items-center justify-center border-2 border-primary text-2xl font-serif">
-                            {selectedSeat.mpName[0]}
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-lg leading-tight">{selectedSeat.mpName}</h3>
-                            <p className="text-sm text-muted-foreground">{selectedSeat.constituency}</p>
-                        </div>
-                    </div>
-
-                    <div className="space-y-3 text-sm">
-                        <div className="flex items-center gap-3">
-                            <Award className="h-4 w-4 text-primary" />
-                            <span>{PARLIAMENT_PARTIES.find(p => p.id === selectedSeat.partyId)?.name}</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <MapPin className="h-4 w-4 text-muted-foreground" />
-                            <span>{selectedSeat.region} Region</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <Briefcase className="h-4 w-4 text-muted-foreground" />
-                            <span>{selectedSeat.seniority} years in service</span>
+            <div className="h-72">
+                {selectedSeat ? (
+                    <div className="fade-in duration-200 mb-8 bg-background border rounded-lg p-5 shadow-sm">
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="h-14 w-14 rounded-full bg-muted flex items-center justify-center border-2 border-primary text-2xl font-serif">
+                                {selectedSeat.mpName[0]}
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-lg leading-tight">{selectedSeat.mpName}</h3>
+                                <p className="text-sm text-muted-foreground">{selectedSeat.constituency}</p>
+                            </div>
                         </div>
 
-                        <div className="mt-4 pt-4 border-t flex justify-between items-center">
-                            <span className="text-xs font-bold uppercase text-muted-foreground">Attendance</span>
-                            <span className={`text-xs font-bold px-2 py-0.5 rounded ${selectedSeat.attendanceState === "Present" ? "bg-green-100 text-green-700" :
-                                    selectedSeat.attendanceState === "Absent" ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700"
-                                }`}>
-                                {selectedSeat.attendanceState}
-                            </span>
+                        <div className="space-y-3 text-sm">
+                            <div className="flex items-center gap-3">
+                                <Award className="h-4 w-4 text-primary" />
+                                <span>{PARLIAMENT_PARTIES.find(p => p.id === selectedSeat.partyId)?.name}</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <MapPin className="h-4 w-4 text-muted-foreground" />
+                                <span>{selectedSeat.region} Region</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <Briefcase className="h-4 w-4 text-muted-foreground" />
+                                <span>{selectedSeat.seniority} years in service</span>
+                            </div>
+
+                            <div className="mt-4 pt-4 border-t flex justify-between items-center">
+                                <span className="text-xs font-bold uppercase text-muted-foreground">Attendance</span>
+                                <span className={`text-xs font-bold px-2 py-0.5 rounded ${selectedSeat.attendanceState === "Present" ? "bg-green-100 text-green-700" :
+                                        selectedSeat.attendanceState === "Absent" ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700"
+                                    }`}>
+                                    {selectedSeat.attendanceState}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ) : (
-                <div className="mb-8 p-6 border border-dashed rounded-lg text-center text-muted-foreground bg-muted/20">
-                    <UserCircle className="h-10 w-10 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm">Select a seat to view MP profile metrics</p>
-                </div>
-            )}
+                ) : (
+                    <div className="mb-8 p-6 border border-dashed rounded-lg text-center text-muted-foreground bg-muted/20">
+                        <UserCircle className="h-10 w-10 mx-auto mb-2 opacity-50" />
+                        <p className="text-sm">Select a seat to view MP profile metrics</p>
+                    </div>
+                )}
+            </div>
 
             {/* Dynamic Charts */}
             <div className="flex-1">

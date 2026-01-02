@@ -256,7 +256,7 @@ export function ParliamentOverview() {
                             <circle
                               cx={x}
                               cy={y}
-                              r={isHovered || isFocused ? 8 : 6.5}
+                              r={isHovered || isFocused ? 12 : 12}
                               fill={party.color}
                               opacity={isOtherPartyHovered ? 0.25 : isPartyHighlighted ? 1 : 0.9}
                               stroke={isFocused ? "#000" : isHovered ? "#fff" : "none"}

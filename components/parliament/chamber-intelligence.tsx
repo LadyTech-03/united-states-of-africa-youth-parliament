@@ -46,7 +46,7 @@ export function ChamberIntelligence() {
                             hoveredSeat={hoveredSeatId}
                             focusedSeat={selectedSeatId} // Use selected as focused for persistent highlight
                             hoveredFilter={hoveredFilter}
-                            onHoverSeat={setHoveredSeatId}
+                            onHoverSeat={setSelectedSeatId}
                             onClickSeat={setSelectedSeatId}
                         />
                     </div>

@@ -193,10 +193,10 @@ export function ChamberSvg({
                         key={seat.id}
                         cx={x}
                         cy={y}
-                        r={isHovered ? 8 : 6}
+                        r={isHovered ? 12 : 12}
                         fill={getSeatColor(seat)}
                         opacity={opacity}
-                        stroke={isFocused ? "var(--foreground)" : isHovered ? "var(--background)" : "none"}
+                        stroke={isFocused ? "var(--foreground)" : isHovered ? "background" : "none"}
                         strokeWidth={isFocused ? 2 : isHovered ? 2 : 0}
                         className="transition-all duration-200 cursor-pointer"
                         onMouseEnter={() => onHoverSeat(seat.id)}
