@@ -70,14 +70,16 @@ export const NAV_ITEMS: NavItem[] = [
   },
 ]
 
-export const TOPBAR_TEXT = "Welcome to the Official Portal of Parliament"
-export const CONTACT_EMAIL = "info@parliament.gov"
-export const CONTACT_PHONE = "+1 (555) 000-1234"
+export const TOPBAR_TEXT = "Welcome to The United States of Africa Youth Parliament"
+export const CONTACT_EMAIL = "info@youthparliament.gov"
+export const CONTACT_PHONE = "+0 (000) 000-0000"
 
 export const SOCIAL_LINKS = [
   { name: "Facebook", href: "https://facebook.com", icon: "facebook" },
-  { name: "Twitter", href: "https://twitter.com", icon: "twitter" },
   { name: "Youtube", href: "https://youtube.com", icon: "youtube" },
+  { name: "Twitter", href: "https://twitter.com", icon: "twitter" },
+  { name: "Mail", href: "https://mail.com", icon: "mail" },
+  // { name: "Whatsapp", href: "https://whatsapp.com", icon: "whatsapp" },
 ]
 
 export interface ProceedingVideo {
@@ -110,46 +112,46 @@ export interface InsightCard {
 export const PROCEEDING_VIDEOS: ProceedingVideo[] = [
   {
     id: "1",
-    title: "Budget Session 2024 - Day 3 Debate",
-    date: "January 15, 2024",
+    title: "Budget Session 2025 - Day 3 Debate",
+    date: "January 15, 2025",
     duration: "2:34:15",
-    youtubeUrl: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtube.com/watch?v=",
     thumbnailUrl: "/placeholder.svg?key=osk97",
     category: "Budget Session",
   },
   {
     id: "2",
     title: "Question Time with the Prime Minister",
-    date: "January 12, 2024",
+    date: "January 12, 2025",
     duration: "1:45:30",
-    youtubeUrl: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtube.com/watch?v=",
     thumbnailUrl: "/placeholder.svg?key=5v42u",
     category: "Question Time",
   },
   {
     id: "3",
     title: "Standing Committee on Finance - Public Hearing",
-    date: "January 10, 2024",
+    date: "January 10, 2025",
     duration: "3:12:45",
-    youtubeUrl: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtube.com/watch?v=",
     thumbnailUrl: "/placeholder.svg?key=r2jna",
     category: "Committee",
   },
   {
     id: "4",
     title: "Healthcare Reform Bill - Second Reading",
-    date: "January 8, 2024",
+    date: "January 8, 2025",
     duration: "2:05:20",
-    youtubeUrl: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtube.com/watch?v=",
     thumbnailUrl: "/placeholder.svg?key=gyobw",
     category: "Legislation",
   },
   {
     id: "5",
     title: "State of the Nation Address",
-    date: "January 5, 2024",
+    date: "January 5, 2025",
     duration: "1:30:00",
-    youtubeUrl: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtube.com/watch?v=",
     thumbnailUrl: "/placeholder.svg?key=7j71h",
     category: "Special Session",
   },
@@ -162,7 +164,7 @@ export const FEATURED_MPS: FeaturedMP[] = [
     title: "Speaker of Parliament",
     constituency: "Central District",
     party: "Independent",
-    imageUrl: "/placeholder.svg?key=srjue",
+    imageUrl: "/images/speaker.jpg?key=srjue",
     profileUrl: "/members/sarah-mitchell",
   },
   {
@@ -171,7 +173,7 @@ export const FEATURED_MPS: FeaturedMP[] = [
     title: "Minister of Finance",
     constituency: "Harbor Bay",
     party: "Progressive Alliance",
-    imageUrl: "/placeholder.svg?key=d3tyf",
+    imageUrl: "/images/speaker.jpg?key=d3tyf",
     profileUrl: "/members/james-chen",
   },
   {
@@ -180,7 +182,7 @@ export const FEATURED_MPS: FeaturedMP[] = [
     title: "Leader of Opposition",
     constituency: "Northern Region",
     party: "National Coalition",
-    imageUrl: "/placeholder.svg?key=6cqul",
+    imageUrl: "/images/speaker.jpg?key=6cqul",
     profileUrl: "/members/amara-okonkwo",
   },
   {
@@ -189,7 +191,7 @@ export const FEATURED_MPS: FeaturedMP[] = [
     title: "Minister of Health",
     constituency: "Eastside",
     party: "Progressive Alliance",
-    imageUrl: "/placeholder.svg?key=0gp19",
+    imageUrl: "/images/speaker.jpg?key=0gp19",
     profileUrl: "/members/david-kimani",
   },
 ]
@@ -198,25 +200,25 @@ export const INSIGHT_CARDS: InsightCard[] = [
   {
     id: "1",
     title: "Constitutional Values Parliamentary Alert",
-    imageUrl: "/insights/constitutional-values-flyer.jpg",
+    imageUrl: "/images/insight.png",
     linkUrl: "/insights/constitutional-values",
   },
   {
     id: "2",
     title: "Subsidiary Legislation Parliamentary Alert",
-    imageUrl: "/insights/subsidiary-legislation-flyer.jpg",
+    imageUrl: "/images/insight1.png",
     linkUrl: "/insights/subsidiary-legislation",
   },
   {
     id: "3",
     title: "Democracy and Freedom Parliamentary Alert",
-    imageUrl: "/insights/democracy-freedom-flyer.jpg",
+    imageUrl: "/images/insight.png",
     linkUrl: "/insights/democracy-values",
   },
   {
     id: "4",
-    title: "Democracy Cup 2024 Event",
-    imageUrl: "/insights/democracy-cup-event.jpg",
-    linkUrl: "/events/democracy-cup-2024",
+    title: "Democracy Cup 2025 Event",
+    imageUrl: "/images/insight1.png",
+    linkUrl: "/events/democracy-cup-2025",
   },
 ]

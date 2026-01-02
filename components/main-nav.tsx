@@ -1,19 +1,21 @@
 "use client"
 
 import Link from "next/link"
-import { Search, Menu, Phone, Mail, ChevronDown, X, ExternalLink } from "lucide-react"
+import { Search, Menu, Phone, Mail, ChevronDown, X, ExternalLink, Facebook, Twitter, Youtube, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { NAV_ITEMS, SOCIAL_LINKS, TOPBAR_TEXT, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/constants"
-import { Facebook, Twitter, Youtube, Instagram } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const socialIcons = {
   facebook: Facebook,
   twitter: Twitter,
   youtube: Youtube,
   instagram: Instagram,
+  mail: Mail,
+  // whatsapp: Whatsapp,
 }
 
 export function MainNav() {
@@ -70,7 +72,7 @@ export function MainNav() {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-8">
               <Link href="/" className="flex items-center space-x-2">
-                <span className="text-xl font-bold tracking-tight text-primary uppercase">Parliament</span>
+                <Image src="/logos/logo.png" alt="Logo" width={50} height={50} />
               </Link>
 
               <nav className="hidden lg:flex items-center space-x-1">
