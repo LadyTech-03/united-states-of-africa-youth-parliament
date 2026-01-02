@@ -43,7 +43,7 @@ const NewsSection = () => {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="h-1 w-12 bg-accent" />
-                  <CardTitle className="text-2xl font-serif">From the Speaker</CardTitle>
+                  <CardTitle className="text-2xl font-serif">From the President</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col md:flex-row gap-6 items-start">
@@ -58,9 +58,9 @@ const NewsSection = () => {
                     unwavering dedication to democratic principles."
                   </p>
                   <div className="pt-4 border-t border-primary/20">
-                    <p className="text-lg font-bold text-primary font-serif">Rt. Hon. .....</p>
+                    <p className="text-lg font-bold text-primary font-serif">His Excellency AGBEGNIGAN Yaovi</p>
                     <p className="text-sm text-muted-foreground uppercase tracking-wide">
-                      Speaker of Parliament
+                        PRESIDENT
                     </p>
                   </div>
                 </div>
